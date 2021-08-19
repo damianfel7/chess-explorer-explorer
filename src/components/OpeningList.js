@@ -16,12 +16,12 @@ const OpeningList = ({fen, pgn, onGo}) => {
     return (
         <div className='list'>
             {console.log(data)}
-            <div className='opTitle'>
+            <button className='opTitle'>
             {(data.opening !== null ? <h1>This is the {data.opening.name}!</h1>
-            : (<h1>{pgn}</h1>))}
-            <a href={`https://lichess.org/analysis/standard/${fen}`} className="lichLink" target="_blank" rel="noreferrer">Check out on lichess.org</a>
-            </div>
-            <h1>Most common moves in the position:</h1>
+            : <h1>{pgn}</h1>)}
+            <p style={{color:"#717370"}}>Click for lichess.org analysis</p>
+            </button>
+            <h1 className="commonColon">Most common moves in the position:</h1>
             <div className="moves">
             {data.moves.length > 0 && <CommonMoves moves={data.moves} onGo={onGo}/>}
             </div>
