@@ -1,0 +1,221 @@
+{
+    "white": 29096605,
+    "draws": 2605420,
+    "black": 27008464,
+    "moves": [
+        {
+            "uci": "e2e4",
+            "san": "e4",
+            "white": 16242929,
+            "draws": 1419578,
+            "black": 15311856,
+            "averageRating": 1754
+        },
+        {
+            "uci": "d2d4",
+            "san": "d4",
+            "white": 7268571,
+            "draws": 680604,
+            "black": 6513074,
+            "averageRating": 1822
+        },
+        {
+            "uci": "g1f3",
+            "san": "Nf3",
+            "white": 1453974,
+            "draws": 155294,
+            "black": 1244619,
+            "averageRating": 2039
+        },
+        {
+            "uci": "c2c4",
+            "san": "c4",
+            "white": 1048648,
+            "draws": 101860,
+            "black": 938925,
+            "averageRating": 1854
+        },
+        {
+            "uci": "e2e3",
+            "san": "e3",
+            "white": 651506,
+            "draws": 48126,
+            "black": 699176,
+            "averageRating": 1745
+        },
+        {
+            "uci": "g2g3",
+            "san": "g3",
+            "white": 668598,
+            "draws": 58022,
+            "black": 620562,
+            "averageRating": 1892
+        },
+        {
+            "uci": "b2b3",
+            "san": "b3",
+            "white": 541532,
+            "draws": 48645,
+            "black": 493202,
+            "averageRating": 1975
+        },
+        {
+            "uci": "d2d3",
+            "san": "d3",
+            "white": 292716,
+            "draws": 21277,
+            "black": 295275,
+            "averageRating": 1803
+        },
+        {
+            "uci": "f2f4",
+            "san": "f4",
+            "white": 263303,
+            "draws": 19789,
+            "black": 241743,
+            "averageRating": 1771
+        },
+        {
+            "uci": "b1c3",
+            "san": "Nc3",
+            "white": 226805,
+            "draws": 16796,
+            "black": 205319,
+            "averageRating": 1846
+        },
+        {
+            "uci": "b2b4",
+            "san": "b4",
+            "white": 130934,
+            "draws": 10253,
+            "black": 119639,
+            "averageRating": 1721
+        },
+        {
+            "uci": "c2c3",
+            "san": "c3",
+            "white": 95836,
+            "draws": 7082,
+            "black": 93011,
+            "averageRating": 1802
+        }
+    ],
+    "averageRating": 1797,
+    "opening": null,
+    "recentGames": [
+        {
+            "id": "zQMI5UDf",
+            "winner": "draw",
+            "speed": "bullet",
+            "white": {
+                "name": "tewarisachin",
+                "rating": 1692
+            },
+            "black": {
+                "name": "chilufya4",
+                "rating": 1691
+            },
+            "year": 2021
+        },
+        {
+            "id": "ZgksbX56",
+            "winner": "white",
+            "speed": "blitz",
+            "white": {
+                "name": "antiloperibelle",
+                "rating": 1844
+            },
+            "black": {
+                "name": "faboche",
+                "rating": 1735
+            },
+            "year": 2021
+        },
+        {
+            "id": "Wo4PIMlf",
+            "winner": "white",
+            "speed": "rapid",
+            "white": {
+                "name": "SanchitSugur",
+                "rating": 1656
+            },
+            "black": {
+                "name": "clinx3000",
+                "rating": 1665
+            },
+            "year": 2021
+        },
+        {
+            "id": "K9nHwGxX",
+            "winner": "white",
+            "speed": "classical",
+            "white": {
+                "name": "NIK93NIK",
+                "rating": 1837
+            },
+            "black": {
+                "name": "Zver_123",
+                "rating": 1531
+            },
+            "year": 2021
+        }
+    ],
+    "topGames": [
+        {
+            "id": "LbeUaNQH",
+            "winner": "black",
+            "speed": "bullet",
+            "white": {
+                "name": "EvenFakerTRXPS",
+                "rating": 3392
+            },
+            "black": {
+                "name": "oikea_strategia",
+                "rating": 3802
+            },
+            "year": 2018
+        },
+        {
+            "id": "NR6jCkcY",
+            "winner": "black",
+            "speed": "bullet",
+            "white": {
+                "name": "TacticAndTechnic",
+                "rating": 3245
+            },
+            "black": {
+                "name": "CrazzyDiamond",
+                "rating": 3558
+            },
+            "year": 2020
+        },
+        {
+            "id": "YzzHJvfA",
+            "winner": "white",
+            "speed": "bullet",
+            "white": {
+                "name": "CrazzyDiamond",
+                "rating": 3549
+            },
+            "black": {
+                "name": "TacticAndTechnic",
+                "rating": 3254
+            },
+            "year": 2020
+        },
+        {
+            "id": "Bceekfmi",
+            "winner": "white",
+            "speed": "bullet",
+            "white": {
+                "name": "CrazzyDiamond",
+                "rating": 3538
+            },
+            "black": {
+                "name": "TacticAndTechnic",
+                "rating": 3264
+            },
+            "year": 2020
+        }
+    ]
+}

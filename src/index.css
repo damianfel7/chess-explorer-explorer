@@ -1,13 +1,147 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color:#1b1c1f;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ * {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.header{
+  text-align: center;
+  color:#e6eaf5;
+  height:50px;
+  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.notation{
+  float:left;
+  width:35%;
+  margin-left:1%;
+}
+::placeholder{
+  color:#c4c4c4;
+}
+
+textarea:focus{
+  outline: none !important;
+  border:1px solid #719ECE;
+  box-shadow: 0 0 10px #719ECE;
+
+}
+
+.textbox{
+  border-radius: 10px;
+  background-color: #464d63;
+  display:inline;
+  width:100%;
+  height:450px;
+  resize:none;
+  color: #e6eaf5;
+  font-size: large;
+}
+
+
+.btn{
+  padding: 0;
+  border: none;
+  background: none;
+  color: #e6eaf5;
+  border-radius: 10px;
+  width:100%;
+  transition: all 100ms ease;
+  background-color:#1364e8;
+  height:50px;
+  cursor:pointer;
+  transition:200ms;
+  font-size: large;
+}
+
+.btn:hover{
+  background-color:#3878e8;
+}
+
+.list{
+  margin-left:5%;
+  color: #e6eaf5;
+  float:left;
+  width:55%;
+  height:500px;
+}
+
+.opTitle{
+  
+  /* margin: 0 auto; */
+  padding-bottom:25px;
+  text-align: center;
+  background-color: #1364e8;
+  width:100%;
+  border-radius: 10px;
+}
+
+.lichLink{
+  text-decoration: none;
+  color:#1d1e1f;
+  padding-left: 2px;
+  float: right;
+  padding-right:5px;
+  padding-bottom:4px;
+  border-bottom-right-radius: 10px;
+  background-color: #bcccd4;
+  transition: all 100ms ease;
+}
+.lichLink:visited{
+  color:#1d1e1f;
+}
+.lichLink:hover{
+  background-color: #a5a8ad;
+}
+.moves{
+  background-color: #464d63;
+  width:50%;
+}
+.commonMove{
+  vertical-align: middle;
+  padding-left:3%;
+  border-bottom: 1px solid #212224;
+  color: #b3b5ba;
+  height:40px;
+
+
+}
+
+.listNotation{
+  display:inline-block;
+  float:left;
+  padding-top:2%;
+}
+
+.goTo{
+  float: right;
+  padding: 0;
+  border: none;
+  background: none;
+  border-bottom: 1px solid #212224;
+  color: #e6eaf5;
+  width:30%;
+  transition: all 100ms ease;
+  background-color:#1364e8;
+  height:40px;
+  cursor:pointer;
+  transition:200ms;
+  font-size: large;
+}
+.goTo:hover{
+  background-color:#3878e8;
 }
