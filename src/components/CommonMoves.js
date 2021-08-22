@@ -6,7 +6,7 @@ const CommonMoves = ({ moves, onGo }) => {
     return (
         <>
             {moves.map((move, index) => (
-                <CommonMove key={index} move={move} onGo={onGo} />
+                <CommonMove move={move} onGo={onGo} key={index} id={index} />
             ))}
         </>
     )

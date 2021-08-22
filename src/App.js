@@ -3,10 +3,10 @@ import Chess from 'chess.js'
 import Header from './components/Header'
 import NotationBox from './components/NotationBox'
 import OpeningList from './components/OpeningList'
+import DefaultData from './components/DefaultData.json'
 const App = () => {
-  const [fen, setFEN] = useState([]);
-  const [pgn, setPGN] = useState([]);
-  const [showOpeningList, setShowOpeningList] = useState(false)
+  const [fen, setFEN] = useState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+  const [pgn, setPGN] = useState(DefaultData);
   const chess = new Chess()
   const options = {sloppy:true}
   
@@ -18,12 +18,18 @@ const App = () => {
     setPGN(pgn)
     chess.load_pgn(pgn.toString())
     setFEN(chess.fen())
-    setShowOpeningList(true)
 }
 
   //adjoins a move chosen with the "Go to" button into the sequence.
   const concatPGN = (newMove) => {
-    var newPGN = pgn.concat(' ', newMove)
+    var newPGN
+    if(typeof pgn === 'string'){
+    newPGN = pgn.concat(' ', newMove)
+    }
+    else
+    {
+      newPGN = newMove
+    }
     setPGN(prevPGN => 
       {return{...prevPGN, ...newPGN};
     });
@@ -37,7 +43,7 @@ const App = () => {
       <Header />
       <NotationBox 
       onConvert={convertPGN}/>
-      {showOpeningList && <OpeningList fen={fen} pgn={pgn} onGo={concatPGN}/>}
+      <OpeningList fen={fen} pgn={pgn} onGo={concatPGN}/>
     </div>
   )
 }
