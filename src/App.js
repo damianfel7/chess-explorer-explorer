@@ -6,36 +6,54 @@ import OpeningList from './components/OpeningList'
 import DefaultData from './components/DefaultData.json'
 const App = () => {
   const [fen, setFEN] = useState("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-  const [pgn, setPGN] = useState(DefaultData);
+  const [pgnSan, setPGNSan] = useState(DefaultData);
+  const [pgnUci, setPGNUci] = useState(DefaultData);
+  const [fromBox, setFromBox] = useState(false);
   const chess = new Chess()
   const options = {sloppy:true}
   
   //converts PGN notation into FEN which is used by the lichess API.
-  const convertPGN = (pgn) => {
+  const convertPGN = (pgn, isFromBox) => {
     if(!chess.load_pgn(pgn, options)){
     alert("Invalid notation. Please try again.") 
     return}
-    setPGN(pgn)
+    setPGNSan(pgn)
+    if(isFromBox){
+      setPGNUci(pgn)
+    }
+    setFromBox(isFromBox);
     chess.load_pgn(pgn.toString())
     setFEN(chess.fen())
 }
 
   //adjoins a move chosen with the "Go to" button into the sequence.
-  const concatPGN = (newMove) => {
-    var newPGN
-    if(typeof pgn === 'string'){
-    newPGN = pgn.concat(' ', newMove)
+  const concatPGN = (newMoveSan, newMoveUci) => {
+    var newPGNSan, newPGNUci,inter=false;
+    if(typeof pgnSan === 'string' && typeof pgnUci==='string' && !pgnUci.includes(" ")){
+    newPGNSan = pgnSan.concat(' ', newMoveSan)
+    newPGNUci = pgnUci.concat(',', newMoveUci)
+    }
+    else if (typeof pgnSan === 'string')
+    {
+      newPGNSan = pgnSan.concat(' ', newMoveSan)
+      newPGNUci = newPGNSan
+      inter=true;
     }
     else
     {
-      newPGN = newMove
+      newPGNSan = newMoveSan
+      newPGNUci = newMoveUci
     }
-    setPGN(prevPGN => 
-      {return{...prevPGN, ...newPGN};
+    setPGNSan(prevPGNSan => 
+      {return{...prevPGNSan, ...newPGNSan};
     });
-    chess.load_pgn(newPGN)
-    console.log(newPGN)
-    convertPGN(newPGN)
+    setPGNUci(prevPGNUci => 
+      {return{...prevPGNUci, ...newPGNUci};
+    });
+    chess.load_pgn(newPGNSan)
+    setPGNUci(newPGNUci)
+    console.log(newPGNUci)
+    convertPGN(newPGNSan, inter)
   } 
 
   return (
@@ -43,7 +61,7 @@ const App = () => {
       <Header />
       <NotationBox 
       onConvert={convertPGN}/>
-      <OpeningList fen={fen} pgn={pgn} onGo={concatPGN}/>
+      <OpeningList fen={fen} pgnSan={pgnSan} pgnUci={pgnUci} onGo={concatPGN} fromBox={fromBox}/>
     </div>
   )
 }
