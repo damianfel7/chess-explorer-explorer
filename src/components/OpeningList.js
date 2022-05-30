@@ -1,14 +1,21 @@
 import React, {useState, useEffect} from 'react'
 import CommonMoves from './CommonMoves';
-const OpeningList = ({fen, pgn, onGo}) => {
-    const [data, setData] = useState(pgn);
+const OpeningList = ({fen, pgnSan, pgnUci, onGo, fromBox}) => {
+    const [data, setData] = useState(pgnSan);
     const [isFirstPosition, setIsFirstPosition] = useState(true);
     useEffect(() => {
         const fetchOpening = async (fen) => {
             if(!isFirstPosition){
-            const res = await fetch(`https://explorer.lichess.ovh/lichess?variant=standard&speeds[]=bullet&speeds[]=blitz&speeds[]=rapid&speeds[]=classical&ratings[]=1600&ratings[]=2500&fen=${fen}`)
-            const data = await res.json()
-            setData(data)
+                if(!fromBox){
+                    const res = await fetch(`https://explorer.lichess.ovh/lichess?variant=standard&speeds[]=bullet&speeds[]=blitz&speeds[]=rapid&speeds[]=classical&ratings[]=1600&ratings[]=2500&play=${pgnUci}`)
+                    const data = await res.json()
+                    setData(data)
+                }
+                else if (fromBox){
+                    const res = await fetch(`https://explorer.lichess.ovh/lichess?variant=standard&speeds[]=bullet&speeds[]=blitz&speeds[]=rapid&speeds[]=classical&ratings[]=1600&ratings[]=2500&fen=${fen}`)
+                    const data = await res.json()
+                    setData(data)
+                }
             }
             else{
                 setIsFirstPosition(false)
@@ -16,7 +23,7 @@ const OpeningList = ({fen, pgn, onGo}) => {
           }
 
           fetchOpening(fen)
-    }, [fen, isFirstPosition])
+    }, [fen])
     
     
     const openAnalysis = () => {
@@ -35,7 +42,7 @@ const OpeningList = ({fen, pgn, onGo}) => {
         openingName = "This is the Starting Position!";
     }
     else{
-        openingName=pgn;
+        openingName=pgnSan;
     }
 
     return (

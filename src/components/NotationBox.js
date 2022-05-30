@@ -9,7 +9,7 @@ const NotationBox = ({onConvert}) => {
               alert('Please put in a notation.')
               return
           }
-          onConvert(text)
+          onConvert(text, true)
           setText('')
           
       }
