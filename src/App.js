@@ -44,12 +44,12 @@ const App = () => {
       newPGNSan = newMoveSan
       newPGNUci = newMoveUci
     }
-    setPGNSan(prevPGNSan => 
+    /*setPGNSan(prevPGNSan => 
       {return{...prevPGNSan, ...newPGNSan};
-    });
-    setPGNUci(prevPGNUci => 
+    });*/
+    /*setPGNUci(prevPGNUci => 
       {return{...prevPGNUci, ...newPGNUci};
-    });
+    });*/
     chess.load_pgn(newPGNSan)
     setPGNUci(newPGNUci)
     console.log(newPGNUci)
@@ -60,7 +60,7 @@ const App = () => {
     <div className="App">
       <Header />
       <NotationBox 
-      onConvert={convertPGN}/>
+      fen={fen} onConvert={convertPGN}/>
       <OpeningList fen={fen} pgnSan={pgnSan} pgnUci={pgnUci} onGo={concatPGN} fromBox={fromBox}/>
     </div>
   )

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const NotationBox = ({onConvert}) => {
+const NotationBox = ({fen, onConvert}) => {
     const [text, setText] = useState('')
     const submitPGN = (e) => {
         e.preventDefault()
@@ -19,6 +19,7 @@ const NotationBox = ({onConvert}) => {
             <form id='notationForm' onSubmit={submitPGN}>
                 <input type="submit" value="Submit Notation" className='btn'></input>
             </form>
+            <iframe src={`https://backscattering.de/web-boardimage/board.svg?fen=${fen}`} style={{width: "400px", height: "444px", margin: "0 auto"}} allowtransparency="true" frameborder="0"></iframe>
         </div>
     )
 }
